@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+body{
+    width: 100%;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#root{
+    display: flex;
+    justify-content: center;
+}
+
+.App{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .container{
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .header{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
+    height: 82px;
+    max-width: 1440px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
   }
-}
+
+  .header__item{
+    width: 30%;
+  }
+  
+  .header__item nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .header__item nav ul li{
+    padding: 0 20px;
+  }
+  
+  .header__item nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  .header__items{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .header__item.logo{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header__item.logo span{
+    position: relative;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 39px;
+    color: #7B58FF;
+  }
+
+  .header__item.logo span:after{
+    content: 'sklo s láskou';
+    position: absolute;
+    font-size: 12px;
+    width: 100%;
+    top: 25px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 0.5em;
+    justify-content: center;
+  }
+
+  .header__item.nav-right nav ul li:last-child a{
+    padding: 0 5px;
+  }
+
+  .header__item.nav-right nav ul li:last-child a.active{
+    color: #858585;
+  }
+
+  /* ------------------------------------------SLIDER */
+
+  .SliderItems{
+    text-align: center;
+  }
+
+  .SliderItems__img img{
+    width: 100%;
+  }
+
+  
+  .SliderItems__title{
+    margin: 7px 0;
+  }
+
+  .SliderItems__title span{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.5em;
+    color: #7B58FF;
+  }
+
+  .slick-active .slider-dots{
+    background-color: #7B58FF !important;
+  }
+
+  .slick-slide:focus {
+    outline: none;
+  }
+
+
+
