@@ -2,9 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import logo from './SliderImg/IMG_1321_1.png'
 
-export default function MySlider (){
+export default function MySlider ({photos}){
     const settings = {
       dots: true,
       infinite: true,
@@ -21,41 +20,19 @@ export default function MySlider (){
         );
       }
     };
-    
+    console.log(process.env.PUBLIC_URL );
     return (
       <Slider {...settings} style={{ outline: "none" }}>
-        <div className='SliderItems'>
-          <div className='SliderItems__img'>
-            <img src={logo} alt="Slide 1" />
+        {photos.map(photo => (
+          <div className='SliderItems'>
+            <div className='SliderItems__img'>
+              <img src={process.env.PUBLIC_URL + '/' + photo.src} alt={photo.alt} />
+            </div>
+            <div className="SliderItems__title">
+              <span>{photo.title}</span>
+            </div>
           </div>
-          <div className="SliderItems__title">
-            <span>foukané sklo</span>
-          </div>
-        </div>
-        <div className='SliderItems'>
-          <div className='SliderItems__img'>
-            <img src={logo} alt="Slide 1" />
-          </div>
-          <div className="SliderItems__title">
-            <span>foukané sklo</span>
-          </div>
-        </div>
-        <div className='SliderItems'>
-          <div className='SliderItems__img'>
-            <img src={logo} alt="Slide 1" />
-          </div>
-          <div className="SliderItems__title">
-            <span>foukané sklo</span>
-          </div>
-        </div>
-        <div className='SliderItems'>
-          <div className='SliderItems__img'>
-            <img src={logo} alt="Slide 1" />
-          </div>
-          <div className="SliderItems__title">
-            <span>foukané sklo</span>
-          </div>
-        </div>
+        ))}
       </Slider>
     );
   };
